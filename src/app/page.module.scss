@@ -1,6 +1,57 @@
-.main {
-  background: red;
+$grey-background-color: #F2F2F2;
+
+.container {
+  height: 100vh;
   display: flex;
+  flex-direction: column;
+}
+
+.appBar {
+  height: 80px;
+  justify-content: center;
+  padding: 16px;
+  box-shadow: none;
+}
+
+.searchInput {
+  background-color: $grey-background-color;
+  width: 100%;
+  height: 42px;
+  padding-left: 16px;
+  box-shadow: none;
+  border-radius: 4px;
+}
+
+.searchButton {
+  box-shadow: none;
+  height: 42px;
+}
+
+.contentContainer {
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.leftColumn {
+  height: 100%;
+  padding: 16px;
+}
+
+.rightColumn {
+  padding: 16px;
+  background-color: $grey-background-color;
+  overflow-y: auto;
+}
+
+.welcomeMessage,
+.selectRepositoryMessage {
+  height: 100%;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+.searchResultsContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }

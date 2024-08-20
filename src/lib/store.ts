@@ -1,16 +1,17 @@
+// RTK boilerplate
 import { configureStore } from "@reduxjs/toolkit"
 import { setupListeners } from "@reduxjs/toolkit/query"
-import { pokemonApi } from "./services/pokemon"
+import { githubApi } from "./services/github"
 
 export const makeStore = () => {
   const store = configureStore({
     reducer: {
-      [pokemonApi.reducerPath]: pokemonApi.reducer,
+      [githubApi.reducerPath]: githubApi.reducer,
     },
     // Adding the api middleware enables caching, invalidation, polling,
     // and other useful features of `rtk-query`.
     middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware().concat(pokemonApi.middleware),
+      getDefaultMiddleware().concat([githubApi.middleware]),
   })
 
   // optional, but required for refetchOnFocus/refetchOnReconnect behaviors
