@@ -1,7 +1,5 @@
-import { NextApiRequest, NextApiResponse } from "next"
-
 // Proxy to github api with optional authorization
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
+export async function GET(req: Request) {
   const { searchParams } = new URL(req.url ?? "")
 
   const [query, perPage, page, sort, order] = [
